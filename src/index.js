@@ -3,11 +3,28 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Home from './Components/Home/Home';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams
+} from "react-router-dom";
+import Cart from './Components/Cart/Cart';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <Router>
+      <Routes >
+        <Route path='/cart' element={<Cart />} />
+        <Route path='/' element={<Home />} />
+      </Routes >
+    </Router> */}
+    <Home />
+
   </React.StrictMode>
 );
 
