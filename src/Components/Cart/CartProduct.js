@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react";
 import { Card, Button } from "react-bootstrap";
 import DataContext from "../Context/DataContext";
+import './cart.scss'
+
 const CartProduct = (props) => {
 
     const productDetail = props.product
@@ -17,7 +19,7 @@ const CartProduct = (props) => {
                 if (obj.productInfo.id === productDetail.productInfo.id) {
                     console.log("INSIDE qty update")
                     console.log({ ...obj })
-                    return { ...obj, quantity: (e.target.id === "increment" ? obj.quantity + 1 : (obj.quantity>1? obj.quantity - 1:0) ) }
+                    return { ...obj, quantity: (e.target.id === "increment" ? obj.quantity + 1 : (obj.quantity > 1 ? obj.quantity - 1 : 0)) }
 
                 }
                 else
@@ -48,7 +50,7 @@ const CartProduct = (props) => {
     return (
         <div>
 
-            <Card className="card " style={{ width: '100%', }}>
+            <Card className="card " style={{ width: '100%', marginBottom: "15px" }}>
 
 
                 <div className="container">
@@ -65,10 +67,12 @@ const CartProduct = (props) => {
                                 <Card.Text>
                                     {productDetail.productInfo.description}
                                 </Card.Text>
-                                <div>
-                                    <div>Price: {productDetail.productInfo.price}</div>
+                                <div style={{marginBottom:"10px"}}>
+                                    <div className="priceText">Price: {productDetail.productInfo.price}</div>
                                     <div>
-                                        Quantity:  <button onClick={updateCount} id="decrement" >-</button>{productDetail.quantity} <button onClick={updateCount} id="increment" >+</button>
+                                        Quantity:  <button className="button" onClick={updateCount} id="decrement" >-</button>
+                                        {productDetail.quantity}
+                                        <button className="button" onClick={updateCount} id="increment" >+</button>
                                     </div>
                                 </div>
                                 <Button onClick={removeProduct} variant="primary">Remove from Cart</Button>

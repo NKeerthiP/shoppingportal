@@ -6,6 +6,7 @@ import Toast from 'react-bootstrap/Toast';
 import ToastContainer from 'react-bootstrap/ToastContainer';
 import Tooltip from 'react-bootstrap/Tooltip';
 import { Row } from "react-bootstrap";
+import "./Products.scss"
 
 const Product = (props) => {
     const productDetail = props.productInfo;
@@ -72,8 +73,8 @@ const Product = (props) => {
 
 
 
-            <Card className="card " style={{ width: '18rem', height: "100%" }}>
-                <div style={{ textAlign: "center", width: "60%" }}>
+            <Card className="card " style={{ width: '15rem', height: "100%" }}>
+                <div className=" d-flex text-center" style={{ textAlign: "center" ,height:"15rem"}}>
                     <Card.Img variant="top" src={productDetail.image} />
                 </div>
 
@@ -83,9 +84,9 @@ const Product = (props) => {
                         {productDetail.description<100? productDetail.description: productDetail.description.slice(0,100)+"..."}
                     </Card.Text>
                     <div>
-                        <div>Price: {productDetail.price}</div>
+                        <div className="priceText">Price: {productDetail.price}</div>
                         <div>
-                            <button onClick={removeCount}>-</button>{quantity} <button onClick={addCount}>+</button>
+                            <button className="button" onClick={removeCount}>-</button>{quantity} <button className="button" onClick={addCount}>+</button>
                         </div>
                     </div>
 

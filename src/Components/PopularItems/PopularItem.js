@@ -24,7 +24,7 @@ const PoularItem = (val) => {
             console.log("inside item")
             // console.log(e.target.val)
             if (e.target.value.length === 0 || JSON.stringify(item).toLowerCase().search((e.target.value).toLowerCase()) > 0) {
-                console.log("Found")
+              
                 return true
             }
             else {
@@ -41,14 +41,14 @@ const PoularItem = (val) => {
 
             <div className="container">
                 <div className="row">
-                    <div className="col">  <h1 className="display-5">Shopping Items</h1> </div>
-                    <div className="col">  <input type="text" placeholder="Search Products" onChange={searchProducts} value={searchVal}></input> </div>
+                    <div className="col-8">  <h1 className="display-5">Shopping Items</h1> </div>
+                    <div className="col-4  d-flex align-items-center">  <input type="text" placeholder="Search Products" onChange={searchProducts} value={searchVal}></input> </div>
                 </div>
 
                 <div className="row">
                     {
                         filteredres.map((obj) => {
-                            return (<div id="Test" className="col"  key={obj.id}> <Product productInfo={obj} /> </div>)
+                            return (<div id="Test" className="col" style={{marginBottom:"15px"}} key={obj.id}> <Product productInfo={obj} /> </div>)
                         })}
                 </div>
 

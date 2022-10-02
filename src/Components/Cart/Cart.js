@@ -25,7 +25,7 @@ const Cart = () => {
             <div className="row">
                 {cartData.length > 0 ? cartData.map((obj) => {
                     return (
-                        <CartProduct product={obj}></CartProduct>
+                        <CartProduct key={obj.id} product={obj}></CartProduct>
                     )
 
                 }) : <div><h5>Your cart is empty</h5></div>

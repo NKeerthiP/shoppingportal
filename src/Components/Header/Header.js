@@ -8,7 +8,7 @@ import DataContext from "../Context/DataContext";
 
 import { Link } from 'react-router-dom';
 import { NavLink } from "react-bootstrap";
-
+import './Header.scss';
 
 function Header() {
 
@@ -17,7 +17,7 @@ function Header() {
     return (
         <>
 
-            <Navbar bg="dark" expand="sm" variant="dark">
+            <Navbar className="updatedNav" bg="dark" expand="sm" variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to="/">
                         Shopping Cart
